@@ -32,7 +32,7 @@ const resetFilter = () => dispatch => {
 const fetchRooms = floor => dispatch => {
   dispatch({ type: ROOM_FETCHING_ROOMS });
   axios
-    .get(`/floor/find?name=${floor}`)
+    .get(`/api/floors/?name=${floor}`)
     .then(res => {
       dispatch({ type: ROOM_FETCHED_ROOMS, payload: res.data.floor });
     })
@@ -42,4 +42,10 @@ const fetchRooms = floor => dispatch => {
 };
 
 export { updateFilter, resetFilter, fetchRooms, updateSelectedRoom };
-export { ROOM_UPDATE_FILTER, ROOM_RESET_FILTER, ROOM_FETCHING_ROOMS, ROOM_FETCHED_ROOMS, ROOM_UPDATE_SELECTED };
+export {
+  ROOM_UPDATE_FILTER,
+  ROOM_RESET_FILTER,
+  ROOM_FETCHING_ROOMS,
+  ROOM_FETCHED_ROOMS,
+  ROOM_UPDATE_SELECTED
+};

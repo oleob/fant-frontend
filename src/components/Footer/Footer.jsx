@@ -4,7 +4,7 @@ import './footer.scss';
 
 const Footer = () => (
   <div className="footer">
-    <p>Copyright Team MEGA© 2019</p>
+    <p>Copyright© 2019 Team MEGA</p>
   </div>
 );
 

@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/api/*"
-  to = "http://vindsiden.no/api/:splat"
+  to = "https://2wnz77png3.execute-api.us-east-1.amazonaws.com/dev/:splat"
   status = 200
   force = true
