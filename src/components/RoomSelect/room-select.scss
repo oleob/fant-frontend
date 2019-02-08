@@ -16,12 +16,8 @@
 }
 
 .room-select {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
+  width: 100%;
   &__floor{
-    min-width: 20rem;
-    min-height: 20rem;
+    width: 100%;
   }
 }

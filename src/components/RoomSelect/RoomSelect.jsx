@@ -55,8 +55,8 @@ class RoomSelect extends Component {
     }
     return (
       <div className="room-select">
-        <RoomInfo selectedRoom={selectedRoom} />
         <Floor className="room-select__floor" />
+        <RoomInfo selectedRoom={selectedRoom} />
       </div>
     );
   }
