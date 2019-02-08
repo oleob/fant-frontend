@@ -111,7 +111,8 @@ const roomReducer = (state = initialState, action) => {
           ...state.filterValues,
           start: moment(),
           end: moment().add(0.5, 'hours')
-        }
+        },
+        selectedRoomName: ''
       };
     default:
       return state;

@@ -8,7 +8,7 @@ import RoomInfo from './RoomInfo';
 import { fetchRooms, updateSelectedRoom, updateSelectedFloor } from '../../actions/roomActions';
 
 const changeClass = (element, newClass) => {
-  let classes = ['room--free', 'room--reserved', 'room--unrelevant'];
+  let classes = ['room--free', 'room--reserved', 'room--unrelevant', 'room--selected'];
   classes = classes.filter(name => name !== newClass);
   classes.forEach(name => element.classList.remove(name));
   element.classList.add(newClass);
@@ -22,11 +22,13 @@ class RoomSelect extends Component {
   }
 
   componentDidUpdate() {
-    const { rooms } = this.props;
+    const { rooms, selectedRoomName } = this.props;
     rooms.forEach(room => {
       const element = document.getElementById(room.name);
       element.onclick = this.handleClick;
-      if (room.reserved) {
+      if (room.name === selectedRoomName) {
+        changeClass(element, 'room--selected');
+      } else if (room.reserved) {
         changeClass(element, 'room--reserved');
       } else if (!room.relevant) {
         changeClass(element, 'room--unrelevant');

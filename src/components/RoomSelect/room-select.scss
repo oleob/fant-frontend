@@ -9,9 +9,15 @@
   &--unrelevant {
     fill: #939393;
   }
+  &--selected {
+    fill: #eeeeee;
+  }
   &:hover {
     fill: #eeeeee;
     cursor: pointer;
+  }
+  &:active {
+    fill: #fefefe;
   }
 }
 
