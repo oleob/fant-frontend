@@ -65,7 +65,6 @@ const filterRooms = (roomList, filterValues) => {
 };
 
 const formatRoomList = (rooms, filterValues) => {
-  console.log(rooms);
   const rawRoomList = dateToMoment(rooms);
   const filteredRoomList = filterRooms(rawRoomList, filterValues);
   return { rawRoomList, filteredRoomList };
@@ -91,6 +90,7 @@ const roomReducer = (state = initialState, action) => {
         filteredRoomList: []
       };
     case ROOM_FETCHED_ROOMS:
+      console.log(action);
       return { ...state, ...formatRoomList(action.payload.rooms, state.filterValues) };
     case ROOM_UPDATE_SELECTED:
       return {
