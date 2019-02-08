@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 375 330" enable-background="new 0 0 375 330" xml:space="preserve">
+<g id="floor">
+	<g>
+		<rect id="room1" class="room" x="255" y="225" fill="#D1C9C9" width="110" height="95"/>
+	</g>
+	<g>
+		<rect id="room2" class="room" x="10" y="245" fill="#D1C9C9" width="105" height="75"/>
+	</g>
+	<g>
+		<rect id="room3" class="room" x="150" y="85" fill="#D1C9C9" width="105" height="135"/>
+	</g>
+	<g>
+		<polygon id="room4" class="room" fill="#D1C9C9" points="115,10 10,10 10,160 115,160 115,85 250,85 250,10 		"/>
+	</g>
+	<g>
+		<rect id="room5" class="room" x="10" y="165" fill="#D1C9C9" width="105" height="75"/>
+	</g>
+	<g>
+		<rect id="room6" class="room" x="150" y="260" fill="#D1C9C9" width="100" height="60"/>
+	</g>
+	<g>
+		<polygon id="hallway" class="hallway" fill="#D1C9C9" points="255,225 155,225 155,80 110,80 110,330 155,330 155,265 255,265 		"/>
+	</g>
+</g>
+<g id="walls">
+	<g>
+		<polygon fill="#353131" points="365,215 260,215 260,60 260,0 250,0 10,0 0,0 0,320 0,330 115,330 115,320 115,290 110,290 
+			110,320 10,320 10,245 110,245 110,265 115,265 115,245 115,240 115,215 110,215 110,240 10,240 10,165 110,165 110,190 115,190 
+			115,165 115,160 115,85 120,85 120,80 110,80 110,85 110,160 10,160 10,10 250,10 250,60 250,80 150,80 145,80 145,85 150,85 
+			150,140 155,140 155,85 250,85 250,220 155,220 155,165 150,165 150,220 150,225 250,225 250,230 255,230 255,225 260,225 
+			365,225 365,320 255,320 255,260 255,255 250,255 250,260 210,260 210,265 250,265 250,320 155,320 155,265 185,265 185,260 
+			155,260 150,260 150,320 150,330 365,330 375,330 375,215 		"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,23 @@
+.room-info {
+  width: 30rem;
+  margin: 1rem;
+  &__data {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    padding: 0.25rem;
+    &--right {
+      margin-left: auto;
+    }
+  }
+  &__padded-text {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+  }
+}

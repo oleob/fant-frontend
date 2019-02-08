@@ -1,0 +1,22 @@
+.room {
+  &--free {
+    fill: #99de99;
+  }
+  
+  &--reserved {
+    fill: #de9999;
+  }
+  &--unrelevant {
+    fill: #939393;
+  }
+  &:hover {
+    fill: #eeeeee;
+    cursor: pointer;
+  }
+}
+
+.room-select {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
