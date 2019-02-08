@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/api",
+  "proxy": "https://2wnz77png3.execute-api.us-east-1.amazonaws.com/dev/",
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
