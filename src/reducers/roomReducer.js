@@ -65,6 +65,7 @@ const filterRooms = (roomList, filterValues) => {
 };
 
 const formatRoomList = (rooms, filterValues) => {
+  console.log(rooms);
   const rawRoomList = dateToMoment(rooms);
   const filteredRoomList = filterRooms(rawRoomList, filterValues);
   return { rawRoomList, filteredRoomList };
