@@ -18,5 +18,10 @@
 .room-select {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  &__floor{
+    min-width: 20rem;
+    min-height: 20rem;
+  }
 }

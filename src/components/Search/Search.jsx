@@ -19,28 +19,26 @@ class Search extends Component {
     const selectedRoom = rooms.find(room => room.name === selectedRoomName);
     return (
       <Paper className="search">
-        <div className="search__pickers">
-          <TextField
-            id="datetime-local"
-            label="Fra"
-            type="datetime-local"
-            value={filterValues.start.format('YYYY-MM-DDTHH:mm')}
-            onChange={this.handleChange('start')}
-            InputLabelProps={{
-              shrink: true
-            }}
-          />
-          <TextField
-            id="datetime-local"
-            label="Til"
-            type="datetime-local"
-            value={filterValues.end.format('YYYY-MM-DDTHH:mm')}
-            onChange={this.handleChange('end')}
-            InputLabelProps={{
-              shrink: true
-            }}
-          />
-        </div>
+        <TextField
+          id="datetime-local"
+          label="Fra"
+          type="datetime-local"
+          value={filterValues.start.format('YYYY-MM-DDTHH:mm')}
+          onChange={this.handleChange('start')}
+          InputLabelProps={{
+            shrink: true
+          }}
+        />
+        <TextField
+          id="datetime-local"
+          label="Til"
+          type="datetime-local"
+          value={filterValues.end.format('YYYY-MM-DDTHH:mm')}
+          onChange={this.handleChange('end')}
+          InputLabelProps={{
+            shrink: true
+          }}
+        />
         <TextField
           id="standard-number"
           label="Kapasitet"
@@ -49,9 +47,16 @@ class Search extends Component {
           type="number"
           margin="normal"
         />
-        <Button variant="contained" color="primary" disabled={selectedRoom ? selectedRoom.reserved || !selectedRoom.relevant : true}>
-          Reserver
-        </Button>
+        <div className="search__button-container">
+          <Button
+            className="search__button"
+            variant="contained"
+            color="primary"
+            disabled={selectedRoom ? selectedRoom.reserved || !selectedRoom.relevant : true}
+          >
+            Reserver
+          </Button>
+        </div>
       </Paper>
     );
   }

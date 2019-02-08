@@ -7,18 +7,18 @@ import Floors from '../Floors';
 import RoomInfo from './RoomInfo';
 import { fetchRooms, updateSelectedRoom } from '../../actions/roomActions';
 
+const changeClass = (element, newClass) => {
+  let classes = ['room--free', 'room--reserved', 'room--unrelevant'];
+  classes = classes.filter(name => name !== newClass);
+  classes.forEach(name => element.classList.remove(name));
+  element.classList.add(newClass);
+};
+
 class RoomSelect extends Component {
   componentDidMount() {
     const { fetchRoomsAction, floorName } = this.props;
     fetchRoomsAction(floorName);
   }
-
-  changeClass = (element, newClass) => {
-    let classes = ['room--free', 'room--reserved', 'room--unrelevant'];
-    classes = classes.filter(name => name !== newClass);
-    classes.forEach(name => element.classList.remove(name));
-    element.classList.add(newClass);
-  };
 
   componentDidUpdate() {
     const { rooms } = this.props;
@@ -26,11 +26,11 @@ class RoomSelect extends Component {
       const element = document.getElementById(room.name);
       element.onclick = this.handleClick;
       if (room.reserved) {
-        this.changeClass(element, 'room--reserved');
+        changeClass(element, 'room--reserved');
       } else if (!room.relevant) {
-        this.changeClass(element, 'room--unrelevant');
+        changeClass(element, 'room--unrelevant');
       } else {
-        this.changeClass(element, 'room--free');
+        changeClass(element, 'room--free');
       }
     });
   }
@@ -56,7 +56,7 @@ class RoomSelect extends Component {
     return (
       <div className="room-select">
         <RoomInfo selectedRoom={selectedRoom} />
-        <Floor style={{ width: '40rem' }} />
+        <Floor className="room-select__floor" />
       </div>
     );
   }
@@ -67,12 +67,10 @@ const mapDispatchToProps = {
   updateRoomAction: updateSelectedRoom
 };
 
-const mapStateToProps = state => {
-  return {
-    rooms: state.room.filteredRoomList,
-    selectedRoomName: state.room.selectedRoomName
-  };
-};
+const mapStateToProps = state => ({
+  rooms: state.room.filteredRoomList,
+  selectedRoomName: state.room.selectedRoomName
+});
 
 export default connect(
   mapStateToProps,
