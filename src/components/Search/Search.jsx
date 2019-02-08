@@ -9,12 +9,25 @@ import { connect } from 'react-redux';
 
 import './search.scss';
 
-import { updateFilter } from '../../actions/roomActions';
+import { updateFilter, updateSelectedFloor, makeReservation } from '../../actions/roomActions';
 
 class Search extends Component {
   handleChange = name => event => {
     const { filterValues, updateFilterAction } = this.props;
     updateFilterAction({ ...filterValues, [name]: event.target.value });
+  };
+
+  makeReservation = () => {
+    const { filterValues, selectedRoomName, selectedFloorName, makeReservationAction } = this.props;
+    makeReservationAction({
+      roomName: selectedRoomName,
+      floorName: selectedFloorName,
+      reservation: {
+        from: filterValues.start.toISOString(),
+        to: filterValues.end.toISOString(),
+        reservedBy: 'Taco Terje'
+      }
+    });
   };
 
   render() {
@@ -75,6 +88,7 @@ class Search extends Component {
               variant="contained"
               color="primary"
               disabled={selectedRoom ? selectedRoom.reserved || !selectedRoom.relevant : true}
+              onClick={this.makeReservation}
             >
               Reserver
             </Button>
@@ -86,14 +100,17 @@ class Search extends Component {
 }
 
 const mapDispatchToProps = {
-  updateFilterAction: updateFilter
+  updateFilterAction: updateFilter,
+  updateFloorAction: updateSelectedFloor,
+  makeReservationAction: makeReservation
 };
 
 const mapStateToProps = state => {
   return {
     filterValues: state.room.filterValues,
     rooms: state.room.filteredRoomList,
-    selectedRoomName: state.room.selectedRoomName
+    selectedRoomName: state.room.selectedRoomName,
+    selectedFloorName: state.room.selectedFloorName
   };
 };
 

@@ -5,6 +5,11 @@ html, body, #root, .grid {
     padding: 0;
 }
 
+html {
+    overflow-y:scroll;
+    color: #272727;
+}
+
 .grid {
     display: grid;
     grid-template-columns: 1fr minmax(auto, 30rem) 1fr;

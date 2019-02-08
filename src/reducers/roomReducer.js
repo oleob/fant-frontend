@@ -4,7 +4,9 @@ import {
   ROOM_RESET_FILTER,
   ROOM_FETCHING_ROOMS,
   ROOM_FETCHED_ROOMS,
-  ROOM_UPDATE_SELECTED
+  ROOM_UPDATE_SELECTED,
+  ROOM_UPDATE_FLOOR,
+  ROOM_MAKE_RESERVATION
 } from '../actions/roomActions';
 
 const initialState = {
@@ -15,7 +17,8 @@ const initialState = {
   },
   rawRoomList: [],
   filteredRoomList: [],
-  selectedRoomName: ''
+  selectedRoomName: '',
+  selectedFloorName: ''
 };
 
 const dateToMoment = rooms =>
@@ -95,6 +98,20 @@ const roomReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedRoomName: action.payload.roomName
+      };
+    case ROOM_UPDATE_FLOOR:
+      return {
+        ...state,
+        selectedFloorName: action.payload.floorName
+      };
+    case ROOM_MAKE_RESERVATION:
+      return {
+        ...state,
+        filterValues: {
+          ...state.filterValues,
+          start: moment(),
+          end: moment().add(0.5, 'hours')
+        }
       };
     default:
       return state;

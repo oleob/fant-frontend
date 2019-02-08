@@ -5,7 +5,7 @@ import './room-select.scss';
 
 import Floors from '../Floors';
 import RoomInfo from './RoomInfo';
-import { fetchRooms, updateSelectedRoom } from '../../actions/roomActions';
+import { fetchRooms, updateSelectedRoom, updateSelectedFloor } from '../../actions/roomActions';
 
 const changeClass = (element, newClass) => {
   let classes = ['room--free', 'room--reserved', 'room--unrelevant'];
@@ -16,8 +16,9 @@ const changeClass = (element, newClass) => {
 
 class RoomSelect extends Component {
   componentDidMount() {
-    const { fetchRoomsAction, floorName } = this.props;
+    const { fetchRoomsAction, floorName, updateFloorAction } = this.props;
     fetchRoomsAction(floorName);
+    updateFloorAction(floorName);
   }
 
   componentDidUpdate() {
@@ -64,7 +65,8 @@ class RoomSelect extends Component {
 
 const mapDispatchToProps = {
   fetchRoomsAction: fetchRooms,
-  updateRoomAction: updateSelectedRoom
+  updateRoomAction: updateSelectedRoom,
+  updateFloorAction: updateSelectedFloor
 };
 
 const mapStateToProps = state => ({
