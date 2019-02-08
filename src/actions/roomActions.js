@@ -5,6 +5,7 @@ const ROOM_UPDATE_FILTER = 'ROOM_UPDATE_FILTER';
 const ROOM_RESET_FILTER = 'ROOM_RESET_FILTER';
 const ROOM_FETCHING_ROOMS = 'ROOM_FETCHING_ROOMS';
 const ROOM_FETCHED_ROOMS = 'ROOM_FETCHED_ROOMS';
+const ROOM_FETCHED_ROOMS_FAILED = 'ROOM_FETCHED_ROOMS_FAILED';
 const ROOM_UPDATE_SELECTED = 'ROOM_UPDATE_SELECTED';
 const ROOM_UPDATE_FLOOR = 'ROOM_UPDATE_FLOOR';
 const ROOM_MAKE_RESERVATION = 'ROOM_MAKE_RESERVATION';
@@ -37,9 +38,15 @@ const resetFilter = () => dispatch => {
 
 const fetchRooms = floor => dispatch => {
   dispatch({ type: ROOM_FETCHING_ROOMS });
-  axios.get(`/api/floors/?name=${floor}`).then(res => {
-    dispatch({ type: ROOM_FETCHED_ROOMS, payload: res.data.floor });
-  });
+  axios
+    .get(`/api/floors/?name=${floor}`)
+    .then(res => {
+      dispatch({ type: ROOM_FETCHED_ROOMS, payload: res.data.floor });
+    })
+    .catch(err => {
+      console.log(err);
+      dispatch({ type: ROOM_FETCHED_ROOMS_FAILED });
+    });
 };
 
 const makeReservation = reservationValues => dispatch => {
@@ -62,6 +69,7 @@ export {
   ROOM_RESET_FILTER,
   ROOM_FETCHING_ROOMS,
   ROOM_FETCHED_ROOMS,
+  ROOM_FETCHED_ROOMS_FAILED,
   ROOM_UPDATE_SELECTED,
   ROOM_UPDATE_FLOOR,
   ROOM_MAKE_RESERVATION
