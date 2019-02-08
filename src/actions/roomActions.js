@@ -31,14 +31,9 @@ const resetFilter = () => dispatch => {
 
 const fetchRooms = floor => dispatch => {
   dispatch({ type: ROOM_FETCHING_ROOMS });
-  axios
-    .get(`/api/floors/?name=${floor}`)
-    .then(res => {
-      dispatch({ type: ROOM_FETCHED_ROOMS, payload: res.data.floor });
-    })
-    .catch(err => {
-      console.log(err.message);
-    });
+  axios.get(`/api/floors/?name=${floor}`).then(res => {
+    dispatch({ type: ROOM_FETCHED_ROOMS, payload: res.data.floor });
+  });
 };
 
 export { updateFilter, resetFilter, fetchRooms, updateSelectedRoom };
