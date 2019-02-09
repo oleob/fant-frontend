@@ -1,0 +1,29 @@
+.select-floor {
+  width: 20rem;
+
+  &__roof {
+    margin-bottom: 0.25rem;
+  }
+  &__floor {
+    margin: 0.25rem 0 0.25rem 0;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    &:active {
+        transform: scale(0.8);
+    }
+  }
+  &__ground {
+    margin-top: 0.25rem;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    &:active {
+        transform: scale(0.8);
+    }
+  }
+}

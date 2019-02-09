@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { BrowserRouter } from 'react-router-dom';
 
 import './scss/app.scss';
 
@@ -26,17 +27,19 @@ const theme = createMuiTheme({
 });
 
 const App = () => (
-  <Provider store={store}>
-    <MuiThemeProvider theme={theme}>
-      <div className="grid">
-        <Header />
-        <div className="content">
-          <Routes />
+  <BrowserRouter>
+    <Provider store={store}>
+      <MuiThemeProvider theme={theme}>
+        <div className="grid">
+          <Header />
+          <div className="content">
+            <Routes />
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
-    </MuiThemeProvider>
-  </Provider>
+      </MuiThemeProvider>
+    </Provider>
+  </BrowserRouter>
 );
 
 export default App;

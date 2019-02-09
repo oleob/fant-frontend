@@ -1,10 +1,13 @@
 import React from 'react';
-import SearchFloor from '../../components/SearchFloor';
+
+import './home.scss';
+
+import SelectFloor from '../../components/SelectFloor';
 
 const Home = () => (
-  <div>
-    <h1>Søk etter en etasje</h1>
-    <SearchFloor />
+  <div className="home">
+    <h1>Velg en etasje</h1>
+    <SelectFloor />
   </div>
 );
 

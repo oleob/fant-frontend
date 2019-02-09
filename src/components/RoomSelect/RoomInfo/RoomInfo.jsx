@@ -9,6 +9,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import './room-info.scss';
 
@@ -25,13 +26,21 @@ const RoomInfo = ({ selectedRoom }) => (
               <ShareIcon className="room-info__icon room-info__icon--right" />
             </div>
             <div className="room-info__row">
-              <GroupIcon className="room-info__icon" />
+              <Tooltip title="Antal sitteplasser">
+                <GroupIcon className="room-info__icon" />
+              </Tooltip>
               <p>{selectedRoom.capacity}</p>
             </div>
             <div className="room-info__row">
-              <WifiIcon className="room-info__icon" />
-              <TvIcon className="room-info__icon" />
-              <SpeakerIcon className="room-info__icon" />
+              <Tooltip title="Rommet har wifi">
+                <WifiIcon className="room-info__icon" />
+              </Tooltip>
+              <Tooltip title="Rommet har TV/prosjektor">
+                <TvIcon className="room-info__icon" />
+              </Tooltip>
+              <Tooltip title="Rommet har Høytalere">
+                <SpeakerIcon className="room-info__icon" />
+              </Tooltip>
             </div>
           </div>
         </Paper>

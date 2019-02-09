@@ -56,13 +56,16 @@ const makeReservation = reservationValues => dispatch => {
   });
 };
 
+const fetchAllFloors = () => axios.get('/api/floors/all');
+
 export {
   updateFilter,
   resetFilter,
   fetchRooms,
   updateSelectedRoom,
   updateSelectedFloor,
-  makeReservation
+  makeReservation,
+  fetchAllFloors
 };
 export {
   ROOM_UPDATE_FILTER,
