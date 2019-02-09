@@ -11,7 +11,7 @@ import {
 
 const initialState = {
   filterValues: {
-    capacity: 3,
+    capacity: 1,
     start: moment(),
     end: moment().add(0.5, 'hours')
   },
