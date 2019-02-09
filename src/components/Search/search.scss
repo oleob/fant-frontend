@@ -1,5 +1,5 @@
 .search {
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
   margin: 2rem 0 2rem 0;
   align-items: baseline;
   &__button-container {
@@ -14,5 +14,6 @@
   &__settings {
     display: flex;
     padding: 1rem;
+    flex-wrap: wrap;
   }
 }
