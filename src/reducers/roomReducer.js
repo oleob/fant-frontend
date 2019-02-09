@@ -93,7 +93,11 @@ const roomReducer = (state = initialState, action) => {
         filteredRoomList: []
       };
     case ROOM_FETCHED_ROOMS:
-      return { ...state, ...formatRoomList(action.payload.rooms, state.filterValues) };
+      return {
+        ...state,
+        ...formatRoomList(action.payload.rooms, state.filterValues),
+        selectedRoomName: ''
+      };
     case ROOM_UPDATE_SELECTED:
       return {
         ...state,
