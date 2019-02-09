@@ -1,7 +1,7 @@
 .search {
-  max-width: 30rem;
   padding: 1rem;
   margin: 2rem 0 2rem 0;
+  align-items: baseline;
   &__button-container {
     z-index: 1;
     display: flex;
@@ -13,7 +13,6 @@
   }
   &__settings {
     display: flex;
-    flex-direction: column;
     padding: 1rem;
   }
 }

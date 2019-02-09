@@ -6,7 +6,6 @@ import './header.scss';
 
 const Header = () => (
   <div className="header">
-    <MenuIcon className="header__icon" />
     <Link to="/">
       <img className="header__logo" src="/fant.svg" alt="logo" />
     </Link>

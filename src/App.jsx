@@ -15,10 +15,10 @@ import Footer from './components/Footer';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#E574BC'
+      main: '#63B0CD'
     },
     secondary: {
-      main: '#63B0CD'
+      main: '#E574BC'
     }
   },
   typography: {
